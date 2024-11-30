@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Funktion</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css"/> 
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <h1>Kabeltrommel Rechner</h1>
+
+    <div class="menuitem">
+        <p>Länge:</p>
+        <input placeholder="Kabel länge in Metern" id="länge" type="number">
+    </div>
+
+    <div class="menuitem">
+        <p>Einheit:</p>
+        <input placeholder="kg, g, t" id="einheit" type="text">
+    </div>
+
+    <button id="berechnen">berechnen</button>
+
+    <div class="menuitem">
+        <h2>Ergebnis:</h2>
+        <h2 id="ergebnis"></h2>
+        <h2 id="einheit_text"></h2>
+    </div>
+
+    <h2>Mathematische Funktion:</h2>
+    <p>länge * kabel gewicht pro meter(0.2 kg) + gewicht der trommel(1 kg)<p>
+    <p>Wenn die Einheit g ist wird das Ergebnis mit 1000 multipliziert,<br> wenn sie t wird das Ergebnis mit 1000 dividiert<br> und wenn sie kg ist bleibt es gleich.</p>
+    
+    <h2>Funktion in Javascript:</h2>
+    <pre><code class="language-javascript">
+    const trommel = 1;
+    const kabel = 0.12;
+
+    function Gewicht_berechnen(meter, einheit){
+        const ergebnis = meter * kabel + trommel;
+        if(einheit == "kg"){
+            return ergebnis;
+        } else if(einheit == "t") {
+            return ergebnis / 1000;
+        } else {
+            return ergebnis * 1000;
+        }
+    }
+    </code></pre>
+
+</body>
+</html>

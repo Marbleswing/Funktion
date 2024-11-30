@@ -1,0 +1,7 @@
+.menuitem {
+    margin: 0px;
+    display: flex; /* Elemente nebeneinander ausrichten */
+    align-items: center; /* Vertikale Zentrierung */
+    gap: 5px; /* Abstand zwischen den Elementen */
+}
+  
