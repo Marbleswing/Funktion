@@ -4,4 +4,27 @@
     align-items: center; /* Vertikale Zentrierung */
     gap: 5px; /* Abstand zwischen den Elementen */
 }
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   
+}
+
+.flex-container p{
+    font-size: 1.5rem; /* Passt sich an die Basis-Schriftgröße an */
+}
+
+.flex-container h2{
+    font-size: 2rem; /* Passt sich an die Basis-Schriftgröße an */
+}
+
+.flex-container h1{
+    font-size: 3rem; /* Passt sich an die Basis-Schriftgröße an */
+}
+
+.flex-container code{
+    font-size: 1.3rem; /* Passt sich an die Basis-Schriftgröße an */
+}

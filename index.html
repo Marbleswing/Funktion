@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css"/> 
     <script src="script.js"></script>
 </head>
-<body>
+<body class="flex-container">
 
     <h1>Kabeltrommel Rechner</h1>
 
@@ -29,27 +29,85 @@
         <h2 id="ergebnis"></h2>
         <h2 id="einheit_text"></h2>
     </div>
-
+    <h2>Szenario:</h2> 
+    <p>Eine Kabelrolle wiegt ohne Kabel 1 kg.<br> Ein Meter Kabel wiegt 0,12 kg.</p>
     <h2>Mathematische Funktion:</h2>
-    <p>länge * kabel gewicht pro meter(0.2 kg) + gewicht der trommel(1 kg)<p>
-    <p>Wenn die Einheit g ist wird das Ergebnis mit 1000 multipliziert,<br> wenn sie t wird das Ergebnis mit 1000 dividiert<br> und wenn sie kg ist bleibt es gleich.</p>
-    
+    <p>
+        f(x) = 0,12x + 1
+        <br><br>
+        • x= Die Länge des Kabels in Metern
+        <br><br>
+        • 0,12x= Das Gewicht des Kabels
+        <br><br>
+        • 1= Das Gewicht der leeren Kabelrolle
+    <p>
+    <h2>Graph:</h2>
+    <img src="graph.png" alt="konnte nicht geladen werden :( so eine scheiße man!" width="500" height="500"/>
+
     <h2>Funktion in Javascript:</h2>
     <pre><code class="language-javascript">
     const trommel = 1;
     const kabel = 0.12;
-
+    
     function Gewicht_berechnen(meter, einheit){
         const ergebnis = meter * kabel + trommel;
-        if(einheit == "kg"){
-            return ergebnis;
-        } else if(einheit == "t") {
+        if(einheit == "G" || einheit == "g"){
+            return ergebnis * 1000;
+        } else if(einheit == "T" || einheit == "t") {
             return ergebnis / 1000;
         } else {
-            return ergebnis * 1000;
+            return ergebnis;
         }
     }
     </code></pre>
+    <h2>Erklärung:</h2>
+    <pre><code class="language-javascript">
+    function Gewicht_berechnen(meter, einheit)
+    </code></pre>
+    
+    <p>
+        So definiert man die Funktion in Javascript, meter und einheit sind die Werte die man übergibt.
+    </p>
+
+    <pre><code class="language-javascript">
+    const trommel = 1;
+    const kabel = 0.12;
+    </code></pre>
+
+    <p>
+        Mit "const" erstellt man eine sogenannte "Konstante".<br>
+        In dem Fall das Gewicht der Trommel alleine und das Gewicht vom Kabel pro Meter.
+    </p>
+    
+    <pre><code class="language-javascript">
+    const ergebnis = meter * kabel + trommel;
+    </code></pre>
+
+    <p>
+        In dem Abschnitt wird die Funktion angewendet.<br>
+        Zusätzlich wird auch in die angegebene Einheit umgerechnet:
+    </p>
+    
+    <pre><code class="language-javascript">
+    if(einheit == "G" || einheit == "g"){
+        return ergebnis * 1000;
+    }
+    </code></pre>
+
+    <p>
+        Mit "if(einheit == "G" || einheit == "g")" wird überprüft ob die Einheit G oder g ist.<br>
+        Wenn das zu trifft wird mit "return ergebnis * 1000;" das Ergebnis in gramm um gerechnet und zurück gegeben.<br>
+        Das wird dann noch mit den anderen Einheiten gemacht.
+    </p>
+
+    <pre><code class="language-javascript">
+    Gewicht_berechnen(50, g);
+    </code></pre>
+
+    <p>
+        So wird die Funktion verwendet.<br>
+        Mit dem Beispiel wird die Länge 50 übergeben und die Einheit g.
+    </p>
 
 </body>
 </html>
